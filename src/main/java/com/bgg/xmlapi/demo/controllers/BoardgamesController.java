@@ -1,19 +1,16 @@
-package controllers;
+package com.bgg.xmlapi.demo.controllers;
 
-import entities.Boardgames;
+import com.bgg.xmlapi.demo.entities.Boardgames;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import services.BoardgamesService;
+import org.springframework.web.bind.annotation.*;
+import com.bgg.xmlapi.demo.services.BoardgamesService;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class BoardgamesController {
     private BoardgamesService service;
 

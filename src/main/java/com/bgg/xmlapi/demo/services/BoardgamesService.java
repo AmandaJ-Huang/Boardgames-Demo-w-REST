@@ -1,12 +1,14 @@
-package services;
+package com.bgg.xmlapi.demo.services;
 
-import entities.Boardgames;
+import com.bgg.xmlapi.demo.entities.Boardgames;
+import com.bgg.xmlapi.demo.repositories.BoardgamesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import repositories.BoardgamesRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class BoardgamesService {
     private BoardgamesRepository repo;
 

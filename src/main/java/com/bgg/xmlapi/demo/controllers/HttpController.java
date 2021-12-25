@@ -1,4 +1,4 @@
-package controllers;
+package com.bgg.xmlapi.demo.controllers;
 
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,13 +6,18 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.DefaultUriBuilderFactory;
 
+@Controller
 public class HttpController {
 
     @Autowired
     CloseableHttpClient httpClient;
+
+    @Autowired
+    private RestTemplate restTemplate;
 
     @Value("${api.host.https://www.boardgamegeek.com/xmlapi2}")
     private String apiHost;

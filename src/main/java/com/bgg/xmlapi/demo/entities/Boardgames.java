@@ -1,4 +1,4 @@
-package entities;
+package com.bgg.xmlapi.demo.entities;
 
 import javax.persistence.*;
 import java.util.Objects;
