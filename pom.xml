@@ -41,7 +41,22 @@
             <artifactId>httpclient</artifactId>
             <version>4.5.13</version>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>7.0.1.Final</version>
+        </dependency>
+		<dependency>
+			<groupId>jtidy</groupId>
+			<artifactId>jtidy</artifactId>
+			<version>4aug2000r7-dev</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
