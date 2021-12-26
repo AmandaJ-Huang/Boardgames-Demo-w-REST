@@ -14,10 +14,11 @@ import java.net.URL;
 
 public class XMLParser {
 
-    private String rootURL = "https://www.boardgamegeek.com/xmlapi2";
+    private String rootURL = "https://www.boardgamegeek.com/xmlapi2/thing?id";
 
     public String parser(String URI, String tagName, String item) {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        String result = "";
 
         try {
             DocumentBuilder db = dbf.newDocumentBuilder();
@@ -29,9 +30,10 @@ public class XMLParser {
                 Node node = nodeList.item(i);
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element element = (Element) node;
-                    return element.getAttribute(item);
+                    result += (element.getAttribute(item) + "\n");
                 }
             }
+            System.out.println(result);
         } catch (ParserConfigurationException | IOException | SAXException e) {
             e.printStackTrace();
         }
