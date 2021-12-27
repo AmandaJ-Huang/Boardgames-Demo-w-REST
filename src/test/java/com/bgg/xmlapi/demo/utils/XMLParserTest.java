@@ -7,9 +7,9 @@ public class XMLParserTest {
     @Test
     public void testParser() {
         // Given
-        String URI = "=010547";
-        String tagName = "results";
-        String tagValue = "numplayers";
+        String URI = "013,010547";
+        String tagName = "item";
+        String tagValue = "type";
         XMLParser xmlParser = new XMLParser();
         String expected = "10547";
 
@@ -23,7 +23,7 @@ public class XMLParserTest {
     @Test
     public void testParserResultOfNumPlayers() {
         // Given
-        String URI = "=010547";
+        String URI = "013,010547";
         String tagName = "poll";
         String tagValue = "name";
         XMLParser xmlParser = new XMLParser();
