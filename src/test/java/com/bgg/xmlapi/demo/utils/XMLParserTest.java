@@ -7,30 +7,12 @@ public class XMLParserTest {
     @Test
     public void testParser() {
         // Given
-        String URI = "013,010547";
-        String tagName = "item";
-        String tagValue = "type";
+        String id = "13";
         XMLParser xmlParser = new XMLParser();
-        String expected = "10547";
+        String expected = "";
 
         // When
-        String actual = xmlParser.parser(URI, tagName, tagValue);
-
-        // Then
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void testParserResultOfNumPlayers() {
-        // Given
-        String URI = "013,010547";
-        String tagName = "poll";
-        String tagValue = "name";
-        XMLParser xmlParser = new XMLParser();
-        String expected = "10547";
-
-        // When
-        String actual = xmlParser.parser(URI, tagName, tagValue);
+        String actual = xmlParser.parser(id);
 
         // Then
         Assert.assertEquals(expected, actual);
