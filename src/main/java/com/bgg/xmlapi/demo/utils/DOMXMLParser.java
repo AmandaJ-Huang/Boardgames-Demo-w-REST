@@ -1,7 +1,6 @@
 package com.bgg.xmlapi.demo.utils;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -12,7 +11,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.net.URL;
 
-public class XMLParser {
+public class DOMXMLParser {
 
     private String rootURL = "https://www.boardgamegeek.com/xmlapi2/thing?id=0";
     private String statsURI = "&stats=1";

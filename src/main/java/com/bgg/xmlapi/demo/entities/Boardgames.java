@@ -1,5 +1,7 @@
 package com.bgg.xmlapi.demo.entities;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -11,6 +13,7 @@ public class Boardgames {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JacksonXmlProperty(isAttribute = true)
     private String thumbnail_url;
     private String primary_name;
     private Integer minplayers;
