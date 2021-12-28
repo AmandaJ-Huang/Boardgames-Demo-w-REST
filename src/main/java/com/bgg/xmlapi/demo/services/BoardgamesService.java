@@ -35,7 +35,7 @@ public class BoardgamesService {
     public Boardgames update(Long id, Boardgames newBGData) {
         Boardgames bgInDatabase = this.findById(id);
 
-        bgInDatabase.setThumbnail_url(newBGData.getThumbnail_url());
+        bgInDatabase.setThumbnailUrl(newBGData.getThumbnailUrl());
         bgInDatabase.setPrimary_name(newBGData.getPrimary_name());
         bgInDatabase.setMinplayers(newBGData.getMinplayers());
         bgInDatabase.setMaxplayers(newBGData.getMaxplayers());

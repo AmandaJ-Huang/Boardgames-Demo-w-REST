@@ -4,26 +4,13 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class XMLParserTest {
-    @Test
-    public void testParser() {
-        // Given
-        String id = "13";
-        DOMXMLParser xmlParser = new DOMXMLParser();
-        String expected = "";
-
-        // When
-        String actual = xmlParser.parser(id);
-
-        // Then
-        Assert.assertEquals(expected, actual);
-    }
 
     @Test
     public void testJacksonParser() {
         // Given
         String id = "13";
         JacksonXMLParser jacksonXMLParser = new JacksonXMLParser();
-        String expected = "";
+        String expected = "https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__thumb/img/8a9HeqFydO7Uun_le9bXWPnidcA=/fit-in/200x150/filters:strip_icc()/pic2419375.jpg";
 
         // When
         String actual = jacksonXMLParser.jacksonParser(id);

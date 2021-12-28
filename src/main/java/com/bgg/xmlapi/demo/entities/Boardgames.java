@@ -1,29 +1,61 @@
 package com.bgg.xmlapi.demo.entities;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText;
 
 import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
-@Table(name = "boardgames", schema = "bgg_data_mine")
+//@Entity
+//@Table(name = "boardgames", schema = "bgg_data_mine")
+@JacksonXmlRootElement(localName = "items")
 public class Boardgames {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JacksonXmlProperty(isAttribute = true)
     private Long id;
 
     @JacksonXmlProperty(isAttribute = true)
-    private String thumbnail_url;
+    private String termsofuse;
+
+    @JacksonXmlElementWrapper(localName = "item")
+    @JacksonXmlProperty(isAttribute = true)
+    private String thumbnail;
+
+    @JacksonXmlText
+    private String thumbnailUrl;
+
+    @JacksonXmlProperty(isAttribute = true)
     private String primary_name;
+
+    @JacksonXmlProperty(isAttribute = true)
     private Integer minplayers;
+
+    @JacksonXmlProperty(isAttribute = true)
     private Integer maxplayers;
+
+    @JacksonXmlProperty(isAttribute = true)
     private Integer suggest_numplayers;
+
+    @JacksonXmlProperty(isAttribute = true)
     private Integer playingtime;
+
+    @JacksonXmlProperty(isAttribute = true)
     private Integer suggested_playerage;
+
+    @JacksonXmlProperty(isAttribute = true)
     private Float rating;
+
+    @JacksonXmlProperty(isAttribute = true)
     private Long rank;
+
+    @JacksonXmlProperty(isAttribute = true)
     private Float averageweight;
+
+    @JacksonXmlProperty(isAttribute = true)
     private String category;
 
     public Long getId() {
@@ -34,12 +66,28 @@ public class Boardgames {
         this.id = id;
     }
 
-    public String getThumbnail_url() {
-        return thumbnail_url;
+    public String getTermsofuse() {
+        return termsofuse;
     }
 
-    public void setThumbnail_url(String thumbnail_url) {
-        this.thumbnail_url = thumbnail_url;
+    public void setTermsofuse(String termsofuse) {
+        this.termsofuse = termsofuse;
+    }
+
+    public String getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
+    }
+
+    public String getThumbnailUrl() {
+        return thumbnailUrl;
+    }
+
+    public void setThumbnailUrl(String thumbnailUrl) {
+        this.thumbnailUrl = thumbnailUrl;
     }
 
     public String getPrimary_name() {
@@ -120,31 +168,5 @@ public class Boardgames {
 
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Boardgames that = (Boardgames) o;
-        return Objects.equals(id, that.id) && Objects.equals(thumbnail_url, that.thumbnail_url) && Objects.equals(primary_name, that.primary_name) && Objects.equals(minplayers, that.minplayers) && Objects.equals(maxplayers, that.maxplayers) && Objects.equals(suggest_numplayers, that.suggest_numplayers) && Objects.equals(playingtime, that.playingtime) && Objects.equals(suggested_playerage, that.suggested_playerage) && Objects.equals(rating, that.rating) && Objects.equals(rank, that.rank) && Objects.equals(averageweight, that.averageweight) && Objects.equals(category, that.category);
-    }
-
-    @Override
-    public String toString() {
-        return "BoardGames{" +
-                "id=" + id +
-                ", thumbnail_url='" + thumbnail_url + '\'' +
-                ", primary_name='" + primary_name + '\'' +
-                ", minplayers=" + minplayers +
-                ", maxplayers=" + maxplayers +
-                ", suggest_numplayers=" + suggest_numplayers +
-                ", playingtime=" + playingtime +
-                ", suggested_playerage=" + suggested_playerage +
-                ", rating=" + rating +
-                ", rank=" + rank +
-                ", averageweight=" + averageweight +
-                ", category='" + category + '\'' +
-                '}';
     }
 }

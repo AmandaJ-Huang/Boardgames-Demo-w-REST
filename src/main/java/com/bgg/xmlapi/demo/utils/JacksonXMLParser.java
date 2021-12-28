@@ -27,6 +27,6 @@ public class JacksonXMLParser {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return output.getThumbnail_url();
+        return output.getThumbnailUrl();
     }
 }
