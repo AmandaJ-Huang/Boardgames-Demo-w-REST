@@ -102,4 +102,47 @@ public class JacksonXMLParserTest {
         // Then
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testGetMaxPlayersTapestry() {
+        // Given
+        String gameId = "286096";
+        JacksonXMLParser jxp = new JacksonXMLParser(gameId);
+        String expected = "5";
+
+        // When
+        String actual = jxp.getMaxPlayers();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetPlaytimeTapestry() {
+        // Given
+        String gameId = "286096";
+        JacksonXMLParser jxp = new JacksonXMLParser(gameId);
+        String expected = "120";
+
+        // When
+        String actual = jxp.getPlayingTime();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetCategoriesCatan() {
+        // Given
+        String gameId = "13";
+        JacksonXMLParser jxp = new JacksonXMLParser(gameId);
+        String expected = "[Economic, Negotiation]";
+
+        // When
+        String actual = jxp.getGameCategories();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
 }

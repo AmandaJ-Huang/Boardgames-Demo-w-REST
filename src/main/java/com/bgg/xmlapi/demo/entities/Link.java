@@ -27,10 +27,6 @@ public class Link {
 
     @Override
     public String toString() {
-        return "Link{" +
-                "type='" + type + '\'' +
-                ", id='" + id + '\'' +
-                ", value='" + value + '\'' +
-                '}';
+        return value;
     }
 }

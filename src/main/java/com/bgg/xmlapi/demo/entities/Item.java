@@ -125,4 +125,20 @@ public class Item {
     public BgElement getMinAge() {
         return minAge;
     }
+
+    public List<Link> getLinkList() {
+        return linkList;
+    }
+
+    public BgElement getUsersRated() {
+        return usersRated;
+    }
+
+    public BgElement getAverage() {
+        return average;
+    }
+
+    public BgElement getAverageWeight() {
+        return averageWeight;
+    }
 }
