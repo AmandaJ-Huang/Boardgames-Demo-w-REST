@@ -1,30 +1,35 @@
 package com.bgg.xmlapi.demo.utils;
 
-import com.bgg.xmlapi.demo.entities.Item;
-import com.bgg.xmlapi.demo.entities.Items;
-import com.bgg.xmlapi.demo.entities.Thumbnail;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.xml.JacksonXmlModule;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import org.junit.Assert;
 import org.junit.Test;
-
-import java.io.InputStream;
-import java.net.URL;
 
 public class JacksonXMLParserTest {
 
     @Test
-    public void readXmlToPojo() throws Exception {
-        JacksonXmlModule module = new JacksonXmlModule();
-        module.setDefaultUseWrapper(false);
-        ObjectMapper mapper = new XmlMapper(module);
-        URL url = new URL("https://www.boardgamegeek.com/xmlapi2/thing?id=013");
-        InputStream input = url.openStream();
+    public void testGetThumbnail() {
+        // Given
+        String gameId = "13";
+        JacksonXMLParser jxp = new JacksonXMLParser(gameId);
+        String expected = "https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__thumb/img/8a9HeqFydO7Uun_le9bXWPnidcA=/fit-in/200x150/filters:strip_icc()/pic2419375.jpg";
 
-//        String item = mapper.readValue(input, Items.class).getItem().getThumbnail();
-        String minPlaytime = mapper.readValue(input, Items.class).getItem().getMinplaytime();
+        // When
+        String actual = jxp.getThumbnailUrl();
 
-//        System.out.println(item);
-        System.out.println(minPlaytime);
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetPrimaryName() {
+        // Given
+        String gameId = "13";
+        JacksonXMLParser jxp = new JacksonXMLParser(gameId);
+        String expected = "Catan";
+
+        // When
+        String actual = jxp.getPrimaryName();
+
+        // Then
+        Assert.assertEquals(expected, actual);
     }
 }

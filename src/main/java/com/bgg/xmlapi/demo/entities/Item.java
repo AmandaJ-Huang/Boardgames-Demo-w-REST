@@ -4,6 +4,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 import java.util.List;
+import java.util.Map;
 
 @JacksonXmlRootElement(localName = "item")
 public class Item {
@@ -15,13 +16,13 @@ public class Item {
     private String id;
 
     @JacksonXmlProperty(isAttribute = true)
-    private String thumbnail;
+    private Thumbnail thumbnail;
 
     @JacksonXmlProperty(isAttribute = true)
     private Image image;
 
-    @JacksonXmlProperty(isAttribute = true)
-    private Name name;
+    @JacksonXmlProperty(isAttribute = true, localName = "name")
+    private List<Name> nameList;
 
     @JacksonXmlProperty(isAttribute = true)
     private String description;
@@ -90,13 +91,12 @@ public class Item {
     @JacksonXmlProperty(isAttribute = true)
     private String averageweight;
 
-
-    public String getThumbnail() {
+    public Thumbnail getThumbnail() {
         return thumbnail;
     }
 
-    public String getMinplaytime() {
-        return minplaytime;
+    public List<Name> getNameList() {
+        return nameList;
     }
 
     @Override

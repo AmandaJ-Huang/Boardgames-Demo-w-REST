@@ -7,4 +7,8 @@ public class Thumbnail {
 
     @JacksonXmlText
     private String thumbnailUrl;
+
+    public String getThumbnailUrl() {
+        return thumbnailUrl;
+    }
 }
