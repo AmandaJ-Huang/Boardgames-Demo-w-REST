@@ -10,18 +10,9 @@ public class JacksonXMLParserTest {
         // Given
         String gameId = "353519";
         JacksonXMLParser jxp = new JacksonXMLParser(gameId);
-        String expected = "boardgame";
-
-        // When
-        String actual = "";
-        try {
-            actual = jxp.getItemType();
-        } catch (NullPointerException e) {
-            actual = "not a board game";
-        }
 
         // Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertFalse(jxp.isBoardGame());
     }
 
     @Test
@@ -151,6 +142,48 @@ public class JacksonXMLParserTest {
     }
 
     @Test
+    public void testGetMinPlaytimeTapestry() {
+        // Given
+        String gameId = "286096";
+        JacksonXMLParser jxp = new JacksonXMLParser(gameId);
+        String expected = "90";
+
+        // When
+        String actual = jxp.getMinPlaytime();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetMaxPlaytimeTapestry() {
+        // Given
+        String gameId = "286096";
+        JacksonXMLParser jxp = new JacksonXMLParser(gameId);
+        String expected = "120";
+
+        // When
+        String actual = jxp.getMaxPlaytime();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetMinAgeTapestry() {
+        // Given
+        String gameId = "286096";
+        JacksonXMLParser jxp = new JacksonXMLParser(gameId);
+        String expected = "12";
+
+        // When
+        String actual = jxp.getMinAge();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
     public void testGetCategoriesCatan() {
         // Given
         String gameId = "13";
@@ -159,6 +192,48 @@ public class JacksonXMLParserTest {
 
         // When
         String actual = jxp.getGameCategories();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetUsersRatedTapestry() {
+        // Given
+        String gameId = "286096";
+        JacksonXMLParser jxp = new JacksonXMLParser(gameId);
+        String expected = "14059";
+
+        // When
+        String actual = jxp.getUsersRated();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetAverageRatingCatan() {
+        // Given
+        String gameId = "13";
+        JacksonXMLParser jxp = new JacksonXMLParser(gameId);
+        String expected = "7.13659";
+
+        // When
+        String actual = jxp.getAverageRating();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetDifficultyTapestry() {
+        // Given
+        String gameId = "286096";
+        JacksonXMLParser jxp = new JacksonXMLParser(gameId);
+        String expected = "2.8912";
+
+        // When
+        String actual = jxp.getDifficulty();
 
         // Then
         Assert.assertEquals(expected, actual);

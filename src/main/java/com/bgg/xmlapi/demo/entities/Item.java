@@ -47,6 +47,9 @@ public class Item {
     @JacksonXmlProperty(isAttribute = true)
     private BgElement average;
 
+    @JacksonXmlProperty(isAttribute = true)
+    private Statistics statistics;
+
     @JacksonXmlProperty(isAttribute = true, localName = "averageweight")
     private BgElement averageWeight;
 
@@ -63,32 +66,6 @@ public class Item {
     private String results;
     @JacksonXmlProperty(isAttribute = true)
     private String result;
-    @JacksonXmlProperty(isAttribute = true)
-    private String statistics;
-    @JacksonXmlProperty(isAttribute = true)
-    private String ratings;
-    @JacksonXmlProperty(isAttribute = true)
-    private String bayesaverage;
-    @JacksonXmlProperty(isAttribute = true)
-    private String ranks;
-    @JacksonXmlProperty(isAttribute = true)
-    private String rank;
-    @JacksonXmlProperty(isAttribute = true)
-    private String stddev;
-    @JacksonXmlProperty(isAttribute = true)
-    private String median;
-    @JacksonXmlProperty(isAttribute = true)
-    private String owned;
-    @JacksonXmlProperty(isAttribute = true)
-    private String trading;
-    @JacksonXmlProperty(isAttribute = true)
-    private String wanting;
-    @JacksonXmlProperty(isAttribute = true)
-    private String wishing;
-    @JacksonXmlProperty(isAttribute = true)
-    private String numcomments;
-    @JacksonXmlProperty(isAttribute = true)
-    private String numweights;
 
     // Getters
 
@@ -137,14 +114,14 @@ public class Item {
     }
 
     public BgElement getUsersRated() {
-        return usersRated;
+        return statistics.getRatings().getUsersrated();
     }
 
     public BgElement getAverage() {
-        return average;
+        return statistics.getRatings().getAverage();
     }
 
     public BgElement getAverageWeight() {
-        return averageWeight;
+        return statistics.getRatings().getAverageweight();
     }
 }

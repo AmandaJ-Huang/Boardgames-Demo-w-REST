@@ -1,5 +1,6 @@
 package com.bgg.xmlapi.demo.utils;
 
+import com.bgg.xmlapi.demo.entities.Item;
 import com.bgg.xmlapi.demo.entities.Items;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
@@ -40,7 +41,10 @@ public class JacksonXMLParser {
         return new Items();
     }
 
-    //boolean?
+    public Boolean isBoardGame() {
+        return parser().getItem() != null;
+    }
+
     public String getItemType() throws NullPointerException {
         return parser().getItem().getType();
     }
