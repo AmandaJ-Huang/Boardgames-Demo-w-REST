@@ -1,8 +1,6 @@
 package com.bgg.xmlapi.demo.utils;
 
-import com.bgg.xmlapi.demo.entities.Item;
 import com.bgg.xmlapi.demo.entities.Items;
-import com.bgg.xmlapi.demo.entities.Name;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.JacksonXmlModule;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
@@ -10,7 +8,6 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.util.List;
 import java.util.stream.Collectors;
 
 public class JacksonXMLParser {
@@ -57,6 +54,13 @@ public class JacksonXMLParser {
                 .filter(name ->  name.getType().equals("primary"))
                 .collect(Collectors.toList())
                 .get(0)
+                .getValue();
+    }
+
+    public String getYearPublished() {
+        return parser()
+                .getItem()
+                .getYearpublished()
                 .getValue();
     }
 

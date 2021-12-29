@@ -4,31 +4,18 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 import java.util.List;
-import java.util.Map;
 
 @JacksonXmlRootElement(localName = "item")
 public class Item {
 
     @JacksonXmlProperty(isAttribute = true)
-    private String type;
-
-    @JacksonXmlProperty(isAttribute = true)
-    private String id;
-
-    @JacksonXmlProperty(isAttribute = true)
     private Thumbnail thumbnail;
-
-    @JacksonXmlProperty(isAttribute = true)
-    private Image image;
 
     @JacksonXmlProperty(isAttribute = true, localName = "name")
     private List<Name> nameList;
 
     @JacksonXmlProperty(isAttribute = true)
-    private String description;
-
-    @JacksonXmlProperty(isAttribute = true)
-    private String yearpublished;
+    private YearPublished yearpublished;
 
     @JacksonXmlProperty(isAttribute = true)
     private String minplayers;
@@ -91,6 +78,17 @@ public class Item {
     @JacksonXmlProperty(isAttribute = true)
     private String averageweight;
 
+    // Necessary values for parsing XML properly, but ignored for purposes of database
+    @JacksonXmlProperty(isAttribute = true)
+    private String type;
+    @JacksonXmlProperty(isAttribute = true)
+    private String id;
+    @JacksonXmlProperty(isAttribute = true)
+    private Image image;
+    @JacksonXmlProperty(isAttribute = true)
+    private String description;
+
+    // Getters
     public Thumbnail getThumbnail() {
         return thumbnail;
     }
@@ -99,10 +97,7 @@ public class Item {
         return nameList;
     }
 
-    @Override
-    public String toString() {
-        return "Item{" +
-                "thumbnail=" + thumbnail +
-                '}';
+    public YearPublished getYearpublished() {
+        return yearpublished;
     }
 }
