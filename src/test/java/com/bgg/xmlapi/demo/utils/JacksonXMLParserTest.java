@@ -88,4 +88,18 @@ public class JacksonXMLParserTest {
         // Then
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testGetMinPlayersTapestry() {
+        // Given
+        String gameId = "286096";
+        JacksonXMLParser jxp = new JacksonXMLParser(gameId);
+        String expected = "1";
+
+        // When
+        String actual = jxp.getMinPlayers();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
 }

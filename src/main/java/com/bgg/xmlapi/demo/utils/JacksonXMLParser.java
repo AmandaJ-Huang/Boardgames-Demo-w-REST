@@ -64,4 +64,11 @@ public class JacksonXMLParser {
                 .getValue();
     }
 
+    public String getMinPlayers() {
+        return parser()
+                .getItem()
+                .getMinPlayers()
+                .getValue();
+    }
+
 }

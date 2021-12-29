@@ -2,9 +2,9 @@ package com.bgg.xmlapi.demo.entities;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-public class YearPublished {
+public class BgElement {
 
-    @JacksonXmlProperty
+    @JacksonXmlProperty(isAttribute = true)
     private String value;
 
     public String getValue() {
