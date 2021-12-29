@@ -39,6 +39,10 @@ public class JacksonXMLParser {
         return new Items();
     }
 
+    public String getItemType() {
+        return parser().getItem().getType();
+    }
+
     public String getThumbnailUrl() {
         return parser()
                 .getItem()

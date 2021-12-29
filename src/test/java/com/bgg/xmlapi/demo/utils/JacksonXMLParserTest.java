@@ -6,6 +6,20 @@ import org.junit.Test;
 public class JacksonXMLParserTest {
 
     @Test
+    public void testGetItemType() {
+        // Given
+        String gameId = "13";
+        JacksonXMLParser jxp = new JacksonXMLParser(gameId);
+        String expected = "boardgame";
+
+        // When
+        String actual = jxp.getItemType();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
     public void testGetThumbnailCatan() {
         // Given
         String gameId = "13";

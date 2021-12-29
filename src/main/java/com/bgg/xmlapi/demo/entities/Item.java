@@ -9,6 +9,9 @@ import java.util.List;
 public class Item {
 
     @JacksonXmlProperty(isAttribute = true)
+    private String type;
+
+    @JacksonXmlProperty(isAttribute = true)
     private Thumbnail thumbnail;
 
     @JacksonXmlProperty(isAttribute = true, localName = "name")
@@ -49,8 +52,6 @@ public class Item {
 
     // Necessary values for parsing XML properly, but ignored for purposes of database
     @JacksonXmlProperty(isAttribute = true)
-    private String type;
-    @JacksonXmlProperty(isAttribute = true)
     private String id;
     @JacksonXmlProperty(isAttribute = true)
     private String image;
@@ -90,6 +91,11 @@ public class Item {
     private String numweights;
 
     // Getters
+
+    public String getType() {
+        return type;
+    }
+
     public Thumbnail getThumbnail() {
         return thumbnail;
     }
