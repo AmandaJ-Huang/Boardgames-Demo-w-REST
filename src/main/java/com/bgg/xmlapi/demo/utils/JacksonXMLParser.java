@@ -2,6 +2,7 @@ package com.bgg.xmlapi.demo.utils;
 
 import com.bgg.xmlapi.demo.entities.Items;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 import com.fasterxml.jackson.dataformat.xml.JacksonXmlModule;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
@@ -39,7 +40,8 @@ public class JacksonXMLParser {
         return new Items();
     }
 
-    public String getItemType() {
+    //boolean?
+    public String getItemType() throws NullPointerException {
         return parser().getItem().getType();
     }
 

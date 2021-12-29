@@ -8,12 +8,17 @@ public class JacksonXMLParserTest {
     @Test
     public void testGetItemType() {
         // Given
-        String gameId = "13";
+        String gameId = "353519";
         JacksonXMLParser jxp = new JacksonXMLParser(gameId);
         String expected = "boardgame";
 
         // When
-        String actual = jxp.getItemType();
+        String actual = "";
+        try {
+            actual = jxp.getItemType();
+        } catch (NullPointerException e) {
+            actual = "not a board game";
+        }
 
         // Then
         Assert.assertEquals(expected, actual);
